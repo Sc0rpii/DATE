@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Freckle+Face&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Podkova:wght@400..800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --text-font: "Freckle Face", system-ui;
+    --title-size: 40px;
+    --text-size: 24px;
+    --background: #333333;
+    --secondary: #5E5E5E;
+    --text-title-color: #48E5C2;
+    --shadow: rgba(243,211,189,0.5);
+    --text-body-color: #FCFAF9;
+}
+
+body{
+    background: var(--background) !important;
+}
+h1,h2,h3{
+    font-family: var(--text-font);
+    font-size: var(--title-size);
+    color: var(--text-title-color);
+    text-shadow: 4px 4px 10px var(--shadow);
+    text-align: center;
+}
+.title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50%;
+}
+.input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    position: relative;
+}
+.input > input{
+    font-family: var(--text-font);
+    font-size: var(--text-size);
+    color: var(--text-body-color);
+    background: var(--secondary);
+    border: solid 5px var(--shadow);
+    outline: none;
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    text-align: center;
+    padding: 15px;
+    padding-right: 20px;
+
+}
+input[type="date"]::-webkit-calendar-picker-indicator{
+    display: none;
+}
+input[type="time"]::-webkit-calendar-picker-indicator{
+    display: none;
+}
+
+.input >span{
+    position: absolute;
+    right: 23%;
+    top: 53%;
+    transform: translateY(-50%);
+    /* pointer-events: none; */
+}
+
+.input > span img{
+    width: 24px;
+    height: 24px;
+}
+
+.button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0 2rem 0;
+}
+.button > input{
+    font-family: var(--text-font);
+    font-size: var(--text-size);
+    color: var(--text-title-color);
+    background: var(--secondary);
+    width: 250px;
+    height: 50px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    box-shadow: 4px 4px 10px 2px var(--shadow);
+}
+
+
+/*PLACES*/
+main{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+div.col-md-6{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: center;
+    justify-content: center;
+}
+div.img {
+    margin-top: 2rem;
+}
+div.img > img{
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 10px 2px var(--shadow);
+    object-fit: cover;
+}
+div.text{
+    text-align: center;
+    margin-top: 1rem;
+    font-size: var(--text-size);
+    font-family: var(--text-font);
+    color: var(--text-body-color);
+    text-shadow: 4px 4px 10px var(--shadow);
+    text-transform: uppercase;
+}
+.place{
+    position: relative;
+    z-index: 1;
+}
+/* PLACE SELECTED */
+.place.selected{
+    position: relative;
+    /* background-color: red; */
+    z-index: 99;
+}
+.place.selected::before {
+    content: ""; 
+    position: absolute;
+    top: -10px; 
+    left: -10px; 
+    width: 115%; 
+    height: 110%; 
+    background-color: rgba(33, 81, 95, 0.5);
+    z-index: 100;
+    border-radius: 15px;
+}
+.place.selected::after {
+    content: "👌";
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    z-index: 100;
+}
+
+/* END SCREEN */
+main:has(> .text){
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.second-title{
+    margin-top: 2rem;
+}
+#readyIMG{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
